@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>O Sonho — Chave do Terra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050711">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body class="state-terra" data-audio="terra">
+<div class="background-noise"></div>
+<main class="page">
+
+<section class="hero hero--key">
+  <div class="orb-wrap" aria-label="Gaia enraíza">
+  <div class="orb orb--terra">
+    <span class="orb-core"></span>
+    <span class="orb-ring orb-ring--one"></span>
+    <span class="orb-ring orb-ring--two"></span>
+    <span class="orb-particles"></span>
+  </div>
+</div>
+  <section class="panel panel--main puzzle-card" data-puzzle data-answer="TERRA" data-next="chave-metal.html">
+    <p class="eyebrow">Chave III</p>
+    <h1>Terra</h1>
+    <p class="lead">A terra guarda o peso de tudo o que caiu. Mas também conhece o segredo de tudo o que pode nascer.</p>
+    <p>Este desafio será definido mais tarde.</p>
+
+    <div class="audio-panel">
+      <button class="btn btn--ghost audio-toggle" type="button" data-audio-toggle>Som: desligado</button>
+      <small>Adiciona <code>assets/audio/terra.mp3</code> para ativar ambiente sonoro desta chave.</small>
+    </div>
+
+    <div class="puzzle-step is-visible" data-step="question">
+      <h2>Enigma</h2>
+      <p>Placeholder: escreve TERRA para avançar.</p>
+      <div class="answer-row">
+        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
+        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      </div>
+      <p class="feedback" data-feedback></p>
+    </div>
+
+    <div class="puzzle-step" data-step="success">
+      <h2>A chave desperta</h2>
+      <p>Algo antigo reconheceu o teu passo.</p>
+      <p class="lead">A Chave da Terra despertou. Gaia ganha raiz.</p>
+      <a class="btn btn--primary" href="chave-metal.html">Continuar</a>
+    </div>
+  </section>
+</section>
+
+</main>
+</body>
+</html>
