@@ -1,4 +1,3 @@
-
 function normalizeAnswer(value) {
   return String(value || "")
     .trim()
@@ -8,34 +7,110 @@ function normalizeAnswer(value) {
     .replace(/\s+/g, "");
 }
 
+function getAcceptedAnswers(expected) {
+  const normalizedExpected = normalizeAnswer(expected);
+  const accepted = new Set([normalizedExpected]);
+
+  // Special accepted alternatives.
+  if (normalizedExpected === "AGUA") accepted.add(normalizeAnswer("ÁGUA"));
+  if (normalizedExpected === "4") accepted.add(normalizeAnswer("QUATRO"));
+
+  return accepted;
+}
+
+function showPuzzleStep(container, stepName) {
+  const steps = container.querySelectorAll(".puzzle-step");
+
+  steps.forEach((step) => {
+    step.classList.remove("is-visible");
+  });
+
+  const nextStep = container.querySelector(`[data-step="${stepName}"]`);
+
+  if (nextStep) {
+    nextStep.classList.add("is-visible");
+  }
+}
+
 function initPuzzles() {
   document.querySelectorAll("[data-puzzle]").forEach((card) => {
     const input = card.querySelector("[data-answer-input]");
     const button = card.querySelector("[data-check-answer]");
     const feedback = card.querySelector("[data-feedback]");
-    const expected = normalizeAnswer(card.dataset.answer);
-    const accepted = new Set([expected]);
-
-    // Special accepted alternatives.
-    if (expected === "AGUA") accepted.add("ÁGUA");
-    if (expected === "4") accepted.add("QUATRO");
+    const accepted = getAcceptedAnswers(card.dataset.answer);
 
     const check = () => {
-      const value = normalizeAnswer(input.value);
+      const value = normalizeAnswer(input?.value);
+
       if (accepted.has(value)) {
-        feedback.textContent = "Resposta aceite.";
-        card.querySelector('[data-step="question"]').classList.remove("is-visible");
-        card.querySelector('[data-step="success"]').classList.add("is-visible");
+        if (feedback) feedback.textContent = "Resposta aceite.";
+
+        const questionStep = card.querySelector('[data-step="question"]');
+        const successStep = card.querySelector('[data-step="success"]');
+
+        if (questionStep) questionStep.classList.remove("is-visible");
+        if (successStep) successStep.classList.add("is-visible");
+
         document.body.classList.add("is-unlocked");
       } else {
-        feedback.textContent = "Ainda não. O sonho não se abre à pressa.";
-        input.focus();
+        if (feedback) feedback.textContent = "Tenta novamente.";
+        input?.focus();
       }
     };
 
     button?.addEventListener("click", check);
+
     input?.addEventListener("keydown", (event) => {
       if (event.key === "Enter") check();
+    });
+  });
+}
+
+function initMultiPuzzles() {
+  document.querySelectorAll("[data-multi-puzzle]").forEach((card) => {
+    const answerButtons = card.querySelectorAll("[data-check-multi-answer]");
+    const showStepButtons = card.querySelectorAll("[data-show-step]");
+
+    answerButtons.forEach((button) => {
+      const check = () => {
+        const expectedAnswer = button.dataset.answer;
+        const currentStep = button.dataset.currentStep;
+        const nextStep = button.dataset.nextStep;
+        const accepted = getAcceptedAnswers(expectedAnswer);
+
+        const stepElement = card.querySelector(`[data-step="${currentStep}"]`);
+        const input = stepElement?.querySelector(".answer-input");
+        const feedback = stepElement?.querySelector(".feedback");
+        const value = normalizeAnswer(input?.value);
+
+        if (accepted.has(value)) {
+          if (feedback) feedback.textContent = "Resposta aceite.";
+          showPuzzleStep(card, nextStep);
+
+          if (nextStep && nextStep.includes("success")) {
+            document.body.classList.add("is-unlocked");
+          }
+        } else {
+          if (feedback) feedback.textContent = "Tenta novamente.";
+          input?.focus();
+        }
+      };
+
+      button.addEventListener("click", check);
+
+      const currentStep = button.dataset.currentStep;
+      const stepElement = card.querySelector(`[data-step="${currentStep}"]`);
+      const input = stepElement?.querySelector(".answer-input");
+
+      input?.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") check();
+      });
+    });
+
+    showStepButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        showPuzzleStep(card, button.dataset.showStep);
+      });
     });
   });
 }
@@ -76,5 +151,6 @@ function initAudio() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initPuzzles();
+  initMultiPuzzles();
   initAudio();
 });
