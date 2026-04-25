@@ -42,33 +42,36 @@ function initPuzzles() {
 
 function initAudio() {
   const audioKey = document.body.dataset.audio;
-  const buttons = document.querySelectorAll("[data-audio-toggle]");
-  if (!audioKey || !buttons.length) return;
+  if (!audioKey) return;
 
   const audio = new Audio(`assets/audio/${audioKey}.mp3`);
   audio.loop = true;
-  audio.volume = 0.45;
+  audio.volume = 0.35;
 
-  let isPlaying = false;
+  let hasStarted = false;
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", async () => {
-      try {
-        if (!isPlaying) {
-          await audio.play();
-          isPlaying = true;
-          button.textContent = "Som: ligado";
-        } else {
-          audio.pause();
-          isPlaying = false;
-          button.textContent = "Som: desligado";
-        }
-      } catch (error) {
-        button.textContent = "Som indisponível";
-        console.warn("Audio file missing or blocked:", error);
-      }
-    });
-  });
+  async function startAudio() {
+    if (hasStarted) return;
+
+    try {
+      await audio.play();
+      hasStarted = true;
+
+      document.removeEventListener("click", startAudio);
+      document.removeEventListener("keydown", startAudio);
+      document.removeEventListener("touchstart", startAudio);
+    } catch (error) {
+      console.warn("Audio file missing or blocked:", error);
+    }
+  }
+
+  // Tenta tocar logo ao carregar.
+  startAudio();
+
+  // Se o browser bloquear, começa na primeira interação.
+  document.addEventListener("click", startAudio);
+  document.addEventListener("keydown", startAudio);
+  document.addEventListener("touchstart", startAudio);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
