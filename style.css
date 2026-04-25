@@ -85,6 +85,157 @@ a { color: inherit; }
   background-repeat: no-repeat;
 }
 
+/* Page-specific wallpapers */
+.state-ar .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/ar_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-fogo .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/fogo_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-terra .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/terra_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-metal .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/metal_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-agua .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/agua_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-madeira .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/madeira_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-vazio .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/vazio_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-origem .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.76) 0%,
+      rgba(0, 0, 0, 0.46) 42%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.30) 100%
+    ),
+    url("assets/img/origem_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-salvacao .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.58) 0%,
+      rgba(0, 0, 0, 0.34) 42%,
+      rgba(0, 0, 0, 0.20) 68%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    url("assets/img/constroi_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.state-destruicao .hero::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.54) 0%,
+      rgba(0, 0, 0, 0.30) 42%,
+      rgba(0, 0, 0, 0.18) 68%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    url("assets/img/destroi_wall.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hero::after {
   content: "";
   position: fixed;
