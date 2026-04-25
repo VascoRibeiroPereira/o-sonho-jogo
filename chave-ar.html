@@ -1,51 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>O Sonho — Chave do Ar</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050711">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <title>O Sonho — Chave do Ar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050711">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body class="state-ar" data-audio="music">
-<div class="background-noise"></div>
-<main class="page">
+  <div class="background-noise"></div>
 
-<section class="hero hero--key">
-  <div class="orb-wrap" aria-label="Gaia respira">
-  <div class="orb orb--ar">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
-  </div>
-</div>
-  <section class="panel panel--main puzzle-card" data-puzzle data-answer="4" data-next="chave-fogo.html">
-    <p class="eyebrow">Chave I</p>
-    <h1>Ar</h1>
-    <p class="lead">O ar não deixa pegadas. Passa entre os dedos. Agita a superfície da água. Faz tremer as folhas antes de sabermos que chegou.</p>
-    <p>Procura o Chafariz da Estefânia. Quando estiveres diante dele, não olhes apenas para a água. Olha para aquilo que tenta subir.</p>
+  <main class="page">
+    <section class="hero hero--key">
 
-    <div class="puzzle-step is-visible" data-step="question">
-      <h2>Enigma</h2>
-      <p>Quantos guardiões parecem fugir ao peso do mundo?</p>
-      <div class="answer-row">
-        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
-        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      <div class="orb-wrap" aria-label="Gaia respira">
+        <div class="orb orb--ar">
+          <span class="orb-core"></span>
+          <span class="orb-ring orb-ring--one"></span>
+          <span class="orb-ring orb-ring--two"></span>
+          <span class="orb-particles"></span>
+        </div>
       </div>
-      <p class="feedback" data-feedback></p>
-    </div>
 
-    <div class="puzzle-step" data-step="success">
-      <h2>A chave desperta</h2>
-      <p>Quatro movimentos erguidos. Quatro sinais contra a queda. A água guarda-os, mas o gesto pertence ao ar.</p>
-      <p class="lead">A Chave do Ar despertou. Durante um instante, Gaia inspira.</p>
-      <a class="btn btn--primary" href="chave-fogo.html">Continuar</a>
-    </div>
-  </section>
-</section>
+      <section class="panel panel--main puzzle-card" data-multi-puzzle>
 
-</main>
+        <p class="eyebrow">Chave I</p>
+        <h1>Ar</h1>
+
+        <p class="lead">
+          O ar vem soprado pelo vento e agita-te suavemente o cabelo.
+        </p>
+
+        <p>
+          Sabes que estás perto de descobrir a chave que desbloqueia e devolve a Gaia o ar.
+          Sem ele, não conseguirás avançar.
+        </p>
+
+        <!-- ENIGMA 1 -->
+        <div class="puzzle-step is-visible" data-step="question-1">
+          <h2>Enigma 1</h2>
+
+          <p>
+            Procura o Chafariz da Estefânia. Observa-o com atenção.
+            Quantos seres parecem ter descido dos céus para te saciar?
+          </p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="1"
+            >
+
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="4"
+              data-current-step="question-1"
+              data-next-step="success-1"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="1"></p>
+        </div>
+
+        <!-- SUCESSO 1 -->
+        <div class="puzzle-step" data-step="success-1">
+          <h2>O vento sopra</h2>
+
+          <p class="lead">
+            Os quatro guardiões estão à escuta.
+            Esperam o nome do arquiteto.
+          </p>
+
+          <button
+            class="btn btn--primary"
+            type="button"
+            data-show-step="question-2"
+          >
+            Continuar
+          </button>
+        </div>
+
+        <!-- ENIGMA 2 -->
+        <div class="puzzle-step" data-step="question-2">
+          <h2>Enigma 2</h2>
+
+          <p>
+            “O Sonho” não é uma obra de ficção — é um futuro inevitável.
+          </p>
+
+          <p>
+            Qual é o primeiro nome do autor do livro <em>O Sonho</em>?
+          </p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="2"
+            >
+
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="vasco"
+              data-current-step="question-2"
+              data-next-step="success-2"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="2"></p>
+        </div>
+
+        <!-- SUCESSO FINAL -->
+        <div class="puzzle-step" data-step="success-2">
+          <h2>A Chave do Ar acordou</h2>
+
+          <p>
+            O vento sopra, quente, escaldante.
+            Gaia respira.
+          </p>
+
+          <p class="lead">
+            A Chave do Ar foi devolvida.
+          </p>
+
+          <a class="btn btn--primary" href="chave-fogo.html">Continuar</a>
+        </div>
+
+      </section>
+    </section>
+  </main>
 </body>
 </html>
