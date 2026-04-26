@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>O Sonho — Chave do Água</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050711">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <title>O Sonho — Chave da Água</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050711">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body class="state-agua" data-audio="music">
-<div class="background-noise"></div>
-<main class="page">
+  <div class="background-noise"></div>
 
-<section class="hero hero--key">
-  <div class="orb-wrap" aria-label="Gaia flui">
-  <div class="orb orb--agua">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
-  </div>
-</div>
-  <section class="panel panel--main puzzle-card" data-puzzle data-answer="AGUA" data-next="chave-madeira.html">
-    <p class="eyebrow">Chave V</p>
-    <h1>Água</h1>
-    <p class="lead">A água nunca fica onde a deixam. Aprende caminhos. Apaga marcas. Leva consigo o que ninguém quis dizer.</p>
-    <p>Este desafio será definido mais tarde.</p>
+  <main class="page">
+    <section class="hero hero--key">
 
-    <div class="puzzle-step is-visible" data-step="question">
-      <h2>Enigma</h2>
-      <p>Placeholder: escreve AGUA ou ÁGUA para avançar.</p>
-      <div class="answer-row">
-        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
-        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      <div class="orb-wrap" aria-label="Gaia flui">
+        <div class="orb orb--agua">
+          <span class="orb-core"></span>
+          <span class="orb-ring orb-ring--one"></span>
+          <span class="orb-ring orb-ring--two"></span>
+          <span class="orb-particles"></span>
+        </div>
       </div>
-      <p class="feedback" data-feedback></p>
-    </div>
 
-    <div class="puzzle-step" data-step="success">
-      <h2>A chave desperta</h2>
-      <p>A corrente aceitou o nome.</p>
-      <p class="lead">A Chave da Água despertou. Gaia ganha fluxo.</p>
-      <a class="btn btn--primary" href="chave-vazio.html">Continuar</a>
-    </div>
-  </section>
-</section>
+      <section class="panel panel--main puzzle-card" data-multi-puzzle>
+        <p class="eyebrow">Chave VI</p>
+        <h1>Água</h1>
 
-</main>
+        <p class="lead">A chave azul chama por ti.</p>
+        <p>A água é a fonte da vida e a casa dos mistérios das profundezas. Nada floresce sem ela.</p>
+
+        <div class="puzzle-step is-visible" data-step="question-1">
+          <h2>Enigma 1</h2>
+          <p>À entrada de um palácio, ouves sete suspiros distantes.<br><br>Como se chamam os bancos de pedra que ladeiam a fonte à entrada deste palácio?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="1"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="Conversadeiras"
+              data-current-step="question-1"
+              data-next-step="success-1"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="1"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-1">
+          <h2>A primeira gota cai</h2>
+          <p class="lead">Pling.<br><br>Parece que vai chover.</p>
+
+          <button
+            class="btn btn--primary"
+            type="button"
+            data-show-step="question-2"
+          >
+            Continuar
+          </button>
+        </div>
+
+        <div class="puzzle-step" data-step="question-2">
+          <h2>Enigma 2</h2>
+          <p>No livro <em>O Sonho</em>, há um sistema de IA integrado no cérebro humano.</p>
+          <p>Qual é a sigla que o define?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="2"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="EDENN"
+              data-current-step="question-2"
+              data-next-step="success-2"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="2"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-2">
+          <h2>A Chave da Água acordou</h2>
+          <p>Gaia ganha vida, água e cor.</p>
+          <p>Rios, lagos e reflexos percorrem o que antes era estéril.</p>
+          <p class="lead">A Chave da Água foi devolvida e o sexto selo aberto.</p>
+          <a class="btn btn--primary" href="chave-vazio.html">Continuar</a>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>

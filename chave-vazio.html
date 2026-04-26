@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>O Sonho — Chave do Vazio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050711">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <title>O Sonho — Chave do Vazio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050711">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body class="state-vazio" data-audio="music">
-<div class="background-noise"></div>
-<main class="page">
+  <div class="background-noise"></div>
 
-<section class="hero hero--key">
-  <div class="orb-wrap" aria-label="Gaia escuta">
-  <div class="orb orb--vazio">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
-  </div>
-</div>
-  <section class="panel panel--main puzzle-card" data-puzzle data-answer="VAZIO" data-next="livro-origem.html">
-    <p class="eyebrow">Chave VII</p>
-    <h1>Vazio</h1>
-    <p class="lead">O vazio não é ausência. É o espaço onde todas as coisas podem ainda acontecer.</p>
-    <p>Este desafio será definido mais tarde.</p>
+  <main class="page">
+    <section class="hero hero--key">
 
-    <div class="puzzle-step is-visible" data-step="question">
-      <h2>Enigma</h2>
-      <p>Placeholder: escreve VAZIO para avançar.</p>
-      <div class="answer-row">
-        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
-        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      <div class="orb-wrap" aria-label="Gaia escuta">
+        <div class="orb orb--vazio">
+          <span class="orb-core"></span>
+          <span class="orb-ring orb-ring--one"></span>
+          <span class="orb-ring orb-ring--two"></span>
+          <span class="orb-particles"></span>
+        </div>
       </div>
-      <p class="feedback" data-feedback></p>
-    </div>
 
-    <div class="puzzle-step" data-step="success">
-      <h2>A chave desperta</h2>
-      <p>O silêncio respondeu.</p>
-      <p class="lead">A Chave do Vazio despertou. Gaia ganha escuta.</p>
-      <a class="btn btn--primary" href="livro-origem.html">Continuar</a>
-    </div>
-  </section>
-</section>
+      <section class="panel panel--main puzzle-card" data-multi-puzzle>
+        <p class="eyebrow">Chave VII</p>
+        <h1>Vazio</h1>
 
-</main>
+        <p class="lead">A chave incolor chama por ti.</p>
+        <p>A presença só tem significado quando conhece a ausência. O vazio não é o fim. É o espaço onde tudo pode começar.</p>
+
+        <div class="puzzle-step is-visible" data-step="question-1">
+          <h2>Enigma 1</h2>
+          <p>No capítulo 26 do livro <em>O Sonho</em>, há uma representação de um mausoléu criado por José da Fonseca, com uma homenagem ao seu filho Carlos.<br><br>Que símbolo foi utilizado pelo escultor que te surpreende?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="1"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="?"
+              data-current-step="question-1"
+              data-next-step="success-1"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="1"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-1">
+          <h2>O silêncio abre-se</h2>
+          <p class="lead">Ouves o som de uma trompeta.</p>
+
+          <button
+            class="btn btn--primary"
+            type="button"
+            data-show-step="question-2"
+          >
+            Continuar
+          </button>
+        </div>
+
+        <div class="puzzle-step" data-step="question-2">
+          <h2>Enigma 2</h2>
+          <p>O último sinal não está na pedra. Está onde os sonhos continuam a ser partilhados.</p>
+          <p>Qual é o @ do autor do livro <em>O Sonho</em> no Instagram?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="2"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="@vasco_entre_sonhos"
+              data-current-step="question-2"
+              data-next-step="success-2"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="2"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-2">
+          <h2>A Chave do Vazio acordou</h2>
+          <p>A lua ilumina a noite escura de Gaia.</p>
+          <p>Tudo parece completo. E, ainda assim, falta algo.</p>
+          <p class="lead">O silêncio abre-se diante de ti. A Chave do Vazio foi devolvida. O sétimo selo foi aberto.<br><br>À tua frente, algo impossível começa a revelar-se.</p>
+          <a class="btn btn--primary" href="livro-origem.html">Continuar</a>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>

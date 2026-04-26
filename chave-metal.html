@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>O Sonho — Chave do Metal</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050711">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <title>O Sonho — Chave do Metal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050711">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body class="state-metal" data-audio="music">
-<div class="background-noise"></div>
-<main class="page">
+  <div class="background-noise"></div>
 
-<section class="hero hero--key">
-  <div class="orb-wrap" aria-label="Gaia ressoa">
-  <div class="orb orb--metal">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
-  </div>
-</div>
-  <section class="panel panel--main puzzle-card" data-puzzle data-answer="METAL" data-next="chave-agua.html">
-    <p class="eyebrow">Chave IV</p>
-    <h1>Metal</h1>
-    <p class="lead">O metal conserva memória no silêncio. Ressoa quando o mundo precisa de ser ouvido.</p>
-    <p>Este desafio será definido mais tarde.</p>
+  <main class="page">
+    <section class="hero hero--key">
 
-    <div class="puzzle-step is-visible" data-step="question">
-      <h2>Enigma</h2>
-      <p>Placeholder: escreve METAL para avançar.</p>
-      <div class="answer-row">
-        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
-        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      <div class="orb-wrap" aria-label="Gaia ressoa">
+        <div class="orb orb--metal">
+          <span class="orb-core"></span>
+          <span class="orb-ring orb-ring--one"></span>
+          <span class="orb-ring orb-ring--two"></span>
+          <span class="orb-particles"></span>
+        </div>
       </div>
-      <p class="feedback" data-feedback></p>
-    </div>
 
-    <div class="puzzle-step" data-step="success">
-      <h2>A chave desperta</h2>
-      <p>O eco encontrou a sua forma.</p>
-      <p class="lead">A Chave do Metal despertou. Gaia ganha ressonância.</p>
-      <a class="btn btn--primary" href="chave-terra.html">Continuar</a>
-    </div>
-  </section>
-</section>
+      <section class="panel panel--main puzzle-card" data-multi-puzzle>
+        <p class="eyebrow">Chave III</p>
+        <h1>Metal</h1>
 
-</main>
+        <p class="lead">A chave preta chama por ti.</p>
+        <p>Com o metal, Gaia poderá forjar ferramentas, pontes e máquinas.</p>
+
+        <div class="puzzle-step is-visible" data-step="question-1">
+          <h2>Enigma 1</h2>
+          <p>Na vila de Sintra há uma fonte que foi mudada de sítio.<br><br>Como se chama a rua onde se encontra a fonte?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="1"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="Volta do Duche"
+              data-current-step="question-1"
+              data-next-step="success-1"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="1"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-1">
+          <h2>O metal ressoa</h2>
+          <p class="lead">Ouves o tilintar de correntes ao longo das paredes.</p>
+
+          <button
+            class="btn btn--primary"
+            type="button"
+            data-show-step="question-2"
+          >
+            Continuar
+          </button>
+        </div>
+
+        <div class="puzzle-step" data-step="question-2">
+          <h2>Enigma 2</h2>
+          <p>O metal guarda nomes, marcas e ofícios.</p>
+          <p>Qual é o último nome do escultor sempre presente no livro <em>O Sonho</em>?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="2"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="Fonseca"
+              data-current-step="question-2"
+              data-next-step="success-2"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="2"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-2">
+          <h2>A Chave do Metal acordou</h2>
+          <p>A noite nasceu em Gaia.</p>
+          <p>Sob a escuridão, surgem linhas, estruturas, instrumentos.</p>
+          <p class="lead">A Chave do Metal foi devolvida e o terceiro selo aberto.</p>
+          <a class="btn btn--primary" href="chave-terra.html">Continuar</a>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>

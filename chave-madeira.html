@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>O Sonho — Chave do Madeira</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050711">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <title>O Sonho — Chave da Madeira</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050711">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body class="state-madeira" data-audio="music">
-<div class="background-noise"></div>
-<main class="page">
+  <div class="background-noise"></div>
 
-<section class="hero hero--key">
-  <div class="orb-wrap" aria-label="Gaia cresce">
-  <div class="orb orb--madeira">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
-  </div>
-</div>
-  <section class="panel panel--main puzzle-card" data-puzzle data-answer="MADEIRA" data-next="chave-vazio.html">
-    <p class="eyebrow">Chave VI</p>
-    <h1>Madeira</h1>
-    <p class="lead">A madeira não vence pela força. Vence pelo tempo. Cresce em silêncio, mesmo quando ninguém olha.</p>
-    <p>Este desafio será definido mais tarde.</p>
+  <main class="page">
+    <section class="hero hero--key">
 
-    <div class="puzzle-step is-visible" data-step="question">
-      <h2>Enigma</h2>
-      <p>Placeholder: escreve MADEIRA para avançar.</p>
-      <div class="answer-row">
-        <input class="answer-input" type="text" placeholder="Escreve a resposta..." autocomplete="off" data-answer-input>
-        <button class="btn btn--primary" type="button" data-check-answer>Responder</button>
+      <div class="orb-wrap" aria-label="Gaia cresce">
+        <div class="orb orb--madeira">
+          <span class="orb-core"></span>
+          <span class="orb-ring orb-ring--one"></span>
+          <span class="orb-ring orb-ring--two"></span>
+          <span class="orb-particles"></span>
+        </div>
       </div>
-      <p class="feedback" data-feedback></p>
-    </div>
 
-    <div class="puzzle-step" data-step="success">
-      <h2>A chave desperta</h2>
-      <p>O mundo abriu uma nervura verde.</p>
-      <p class="lead">A Chave da Madeira despertou. Gaia ganha vida.</p>
-      <a class="btn btn--primary" href="chave-agua.html">Continuar</a>
-    </div>
-  </section>
-</section>
+      <section class="panel panel--main puzzle-card" data-multi-puzzle>
+        <p class="eyebrow">Chave V</p>
+        <h1>Madeira</h1>
 
-</main>
+        <p class="lead">A chave verde chama por ti.</p>
+        <p>A madeira é calor, habitação e descoberta. É raiz e viagem. É o corpo vivo da construção.</p>
+
+        <div class="puzzle-step is-visible" data-step="question-1">
+          <h2>Enigma 1</h2>
+          <p>Putti bebericam alegremente água enquanto te observam chegar.<br><br>O que dizem eles?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="1"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="Salve"
+              data-current-step="question-1"
+              data-next-step="success-1"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="1"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-1">
+          <h2>A vida procura luz</h2>
+          <p class="lead">Algo remexe por baixo de ti. A vida à procura de luz.</p>
+
+          <button
+            class="btn btn--primary"
+            type="button"
+            data-show-step="question-2"
+          >
+            Continuar
+          </button>
+        </div>
+
+        <div class="puzzle-step" data-step="question-2">
+          <h2>Enigma 2</h2>
+          <p>As raízes avançam para uma década ainda por abrir.</p>
+          <p>Em que década decorre a história <em>O Sonho</em>?</p>
+
+          <div class="answer-row">
+            <input
+              class="answer-input"
+              type="text"
+              placeholder="Escreve a resposta..."
+              autocomplete="off"
+              data-answer-input="2"
+            >
+            <button
+              class="btn btn--primary"
+              type="button"
+              data-check-multi-answer
+              data-answer="60"
+              data-current-step="question-2"
+              data-next-step="success-2"
+            >
+              Responder
+            </button>
+          </div>
+
+          <p class="feedback" data-feedback="2"></p>
+        </div>
+
+        <div class="puzzle-step" data-step="success-2">
+          <h2>A Chave da Madeira acordou</h2>
+          <p>Árvores rebentam o chão estéril de Gaia.</p>
+          <p>Raízes atravessam ruínas. Ramos erguem-se em direção ao céu.</p>
+          <p class="lead">A Chave da Madeira foi devolvida e o quinto selo aberto.</p>
+          <a class="btn btn--primary" href="chave-agua.html">Continuar</a>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>
