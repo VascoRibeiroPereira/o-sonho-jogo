@@ -14,27 +14,104 @@
 
 <section class="hero hero--origin">
   <div class="orb-wrap" aria-label="Gaia desperta">
-  <div class="orb orb--origem">
-    <span class="orb-core"></span>
-    <span class="orb-ring orb-ring--one"></span>
-    <span class="orb-ring orb-ring--two"></span>
-    <span class="orb-particles"></span>
+    <div class="orb orb--origem">
+      <span class="orb-core"></span>
+      <span class="orb-ring orb-ring--one"></span>
+      <span class="orb-ring orb-ring--two"></span>
+      <span class="orb-particles"></span>
+    </div>
   </div>
-</div>
-  <section class="panel panel--main decision-card">
+
+  <section class="panel panel--main decision-card" data-final-question>
     <p class="eyebrow">limiar final</p>
     <h1>O Livro da Origem</h1>
-    <p class="lead">As sete chaves despertaram.</p>
-    <p>Gaia já não é a mesma. O ar move-se. O fogo aquece. A terra sustenta. O metal ressoa. A água corre. A madeira cresce. O vazio escuta.</p>
-    <p>Agora, diante da origem, resta uma decisão.</p>
-    <p>O poder que acordaste não pede licença. Ou o controlas, ou ele escolherá por ti.</p>
-    <div class="choice-grid">
-      <a class="btn btn--danger" href="final-destruicao.html">Perder o controlo</a>
-      <a class="btn btn--primary" href="final-salvacao.html">Conter o poder</a>
+
+    <p class="lead">As palavras da origem estão vivas.</p>
+    <p>Não pertencem ao mal nem ao bem.</p>
+    <p>Elas aguardam a tua resposta.</p>
+
+    <p>
+      Se reconheceres o ser mitológico que salvou <em>O Sonho</em>,
+      encontrarás um equilíbrio.
+    </p>
+
+    <div class="puzzle-step is-visible" data-step="question">
+      <h2>Pergunta</h2>
+
+      <p>
+        Qual é o ser mitológico que renova a esperança no nascer de um novo dia
+        para Gaia... E para a Terra?
+      </p>
+
+      <div class="answer-row">
+        <input
+          class="answer-input"
+          type="text"
+          placeholder="Escreve a resposta..."
+          autocomplete="off"
+          data-final-answer-input
+        >
+
+        <button
+          class="btn btn--primary"
+          type="button"
+          data-check-final-answer
+        >
+          Responder
+        </button>
+      </div>
+
+      <p class="feedback" data-final-feedback></p>
     </div>
   </section>
 </section>
 
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.querySelector("[data-final-answer-input]");
+    const button = document.querySelector("[data-check-final-answer]");
+    const feedback = document.querySelector("[data-final-feedback]");
+
+    const normalize = (value) => {
+      return String(value || "")
+        .trim()
+        .toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "");
+    };
+
+    const checkAnswer = () => {
+      const value = normalize(input?.value);
+      const correctAnswers = new Set(["FENIX"]);
+
+      if (correctAnswers.has(value)) {
+        if (feedback) {
+          feedback.textContent = "As palavras da origem fundem-se a ti. O poder encontra um sítio para viver.";
+        }
+
+        window.setTimeout(() => {
+          window.location.href = "final-salvacao.html";
+        }, 1900);
+      } else {
+        if (feedback) {
+          feedback.textContent = "As palavras da origem absorvem-te. O poder cresce sem forma.";
+        }
+
+        window.setTimeout(() => {
+          window.location.href = "final-destruicao.html";
+        }, 1900);
+      }
+    };
+
+    button?.addEventListener("click", checkAnswer);
+
+    input?.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") checkAnswer();
+    });
+  });
+</script>
 </body>
 </html>
